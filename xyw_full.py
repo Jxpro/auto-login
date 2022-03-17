@@ -84,13 +84,15 @@ os.chdir(os.path.join(os.getcwd(), 'js'))
 
 # 计算 hmd5 和 info 并更新
 config_str = base64.b64encode(json.dumps(config).encode()).decode()
-hmd5 = os.popen(f'node pwd.js {config_str}').read().strip()
-i = os.popen(f'node info.js {config_str}').read().strip()
-config.update({'hmd5': hmd5, "i": i})
+config.update({
+    'hmd5': os.popen(f'node pwd.js {config_str}').read().strip(),
+    "i": os.popen(f'node info.js {config_str}').read().strip()
+})
 
 # 计算 checksum 并更新
-checksum = os.popen(f'node checksum.js {base64.b64encode(json.dumps(config).encode()).decode()}').read().strip()
-config.update({'checksum': checksum})
+config.update({
+    'checksum': os.popen(f'node checksum.js {base64.b64encode(json.dumps(config).encode()).decode()}').read().strip()
+})
 
 # 登录请求参数
 login_params = {
