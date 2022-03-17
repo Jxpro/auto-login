@@ -34,7 +34,7 @@ token_res = requests.get(token_url + parse.urlencode(token_params))
 config.update({'token': re.search(r'"challenge":"(.*?)",', token_res.text).group(1)})
 
 # 切换至js文件目录
-os.chdir(workspace + r'\js')
+os.chdir(os.path.join(os.getcwd(),'js'))
 
 # 计算 hmd5 和 info 并更新
 hmd5 = os.popen(f'node pwd.js {base64.b64encode(json.dumps(config).encode()).decode()}').read().strip()

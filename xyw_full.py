@@ -80,7 +80,7 @@ config.update({'token': token})
 # print(token)
 
 # 切换至js文件目录
-os.chdir(workspace + r'\js')
+os.chdir(os.path.join(os.getcwd(), 'js'))
 
 # 计算 hmd5 和 info 并更新
 config_str = base64.b64encode(json.dumps(config).encode()).decode()
