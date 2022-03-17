@@ -1,0 +1,12 @@
+{
+    "username": "your username",
+    "password": "your password",
+    "acid": "1",
+    "enc_ver": "srun_bx1",
+    "n": "200",
+    "type": "1",
+    "os": "Windows 10",
+    "name": "Windows",
+    "double_stack": "0",
+    "tips": "以上参数为自己抓包得出，具体情况还得自己分析"
+}
