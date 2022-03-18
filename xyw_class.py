@@ -87,6 +87,7 @@ class XYW:
         token_res = requests.get(self.token_url + parse.urlencode(token_params), headers=self.headers)
         token = re.search(r'"challenge":"(.*?)",', token_res.text).group(1)
         self.config.update({'token': token})
+        print(token_res.text)
 
     # 计算请求参数
     def calc_argus(self):
@@ -125,7 +126,8 @@ class XYW:
         }
 
         final_url = self.login_url + parse.urlencode(login_params)
-        requests.get(final_url, headers=self.headers)
+        login_res = requests.get(final_url, headers=self.headers)
+        print(login_res.text)
 
 
 if __name__ == '__main__':
