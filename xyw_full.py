@@ -61,7 +61,7 @@ status_params = {
 # 查询状态
 status_res = requests.get(status_url + parse.urlencode(status_params), headers=headers)
 # print(status_params)
-# print(status_res.text)
+print(status_res.text)
 
 # token请求参数
 token_params = {
@@ -75,9 +75,9 @@ token_params = {
 token_res = requests.get(token_url + parse.urlencode(token_params), headers=headers)
 token = re.search(r'"challenge":"(.*?)",', token_res.text).group(1)
 config.update({'token': token})
-# print(token_params)
-# print(token_res.text)
 # print(token)
+# print(token_params)
+print(token_res.text)
 
 # 切换至js文件目录
 os.chdir(os.path.join(os.getcwd(), 'js'))
@@ -116,4 +116,4 @@ final_url = login_url + parse.urlencode(login_params)
 login_res = requests.get(final_url, headers=headers)
 # print(final_url)
 # print(login_params)
-# print(login_res.text)
+print(login_res.text)
