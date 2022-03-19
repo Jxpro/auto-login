@@ -72,6 +72,9 @@ class XYW:
         # print(status_res.text)
         return re.search(r'"error":"(.*?)"', status_res.text).group(1)
 
+    def get_config(self):
+        return base64.b64encode(json.dumps(self.config).encode()).decode()
+
     # 获取 ip 并更新配置
     def get_ip(self):
         ip = re.search(r'ip\s*: "(.*?)",', requests.get(self.index_url).text).group(1)
@@ -99,14 +102,12 @@ class XYW:
         os.chdir(os.path.join(os.getcwd(), 'js'))
 
         # 计算 hmd5 和 info 并更新
-        config_str1 = base64.b64encode(json.dumps(self.config).encode()).decode()
-        hmd5 = os.popen(f'node pwd.js {config_str1}').read().strip()
-        info = os.popen(f'node info.js {config_str1}').read().strip()
+        hmd5 = os.popen(f'node pwd.js {self.get_config()}').read().strip()
+        info = os.popen(f'node info.js {self.get_config()}').read().strip()
         self.config.update({'hmd5': hmd5, "i": info})
 
         # 计算 checksum 并更新
-        config_str2 = base64.b64encode(json.dumps(self.config).encode()).decode()
-        checksum = os.popen(f'node checksum.js {config_str2}').read().strip()
+        checksum = os.popen(f'node checksum.js {self.get_config()}').read().strip()
         self.config.update({'checksum': checksum})
         return hmd5, info, checksum
 
