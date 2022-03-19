@@ -38,7 +38,8 @@ class XYW:
 
         # 指定工作目录，方便集成脚本到其他工具（如 utools）
         os.chdir(workspace)
-        self.config = json.load(open('config.json'))
+        with open('config.json') as config:
+            self.config = json.load(config)
 
         # 初始化时间戳
         self.cb_time = int(time.time() * 1000)

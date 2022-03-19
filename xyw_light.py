@@ -14,7 +14,8 @@ login_url = 'https://xyw.hainanu.edu.cn/cgi-bin/srun_portal?'
 # 指定工作目录，方便集成脚本到其他工具（如 utools）
 workspace = r'D:\TASK\Program\Python\project\demo\src\xywlogin'
 os.chdir(workspace)
-config = json.load(open('config.json'))
+with open('config.json') as config_file:
+    config = json.load(config_file)
 
 # 该参数必须要，但是内容不重要
 callback_str = 'jQuery1124'

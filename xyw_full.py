@@ -36,7 +36,8 @@ login_url = 'https://xyw.hainanu.edu.cn/cgi-bin/srun_portal?'
 # 指定工作目录，方便集成脚本到其他工具（如 utools）
 workspace = r'D:\TASK\Program\Python\project\demo\src\xywlogin'
 os.chdir(workspace)
-config = json.load(open('config.json'))
+with open('config.json') as config_file:
+    config = json.load(config_file)
 
 # 初始化时间戳
 cb_time = int(time.time() * 1000)
