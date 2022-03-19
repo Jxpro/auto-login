@@ -17,6 +17,6 @@ This is a project about automatically logging in to the campus network, includin
 
 `xyw_class.py` is the class implementation version of `xyw_full.py`.
 
-## 📧Contact Us
+## 📧Contact me
 
 If you have any concerns here, please post as Github issues, or send an e-mail to Joker Xin by [jxpro@qq.com](mailto:jxpro@qq.com).
