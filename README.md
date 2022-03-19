@@ -9,7 +9,7 @@ This is a project about automatically logging in to the campus network, includin
 ## 🛠️How to use
 
 >   1.   Rename the `config_template.json` to `config.json`
->   2.   Modify the parameters according to the actual situation
+>   2.   Modify the parameters in `config.json` according to the actual situation
 
 `xyw_full.py` simulates the real parameter construction, including the complete query and authentication process.
 
