@@ -137,5 +137,5 @@ class XYW:
 
 
 if __name__ == '__main__':
-    login = XYW(r'D:\TASK\Program\Python\project\demo\src\xywlogin')
+    login = XYW(r'D:\TASK\Program\Python\project\xywlogin\src')
     login.connect()

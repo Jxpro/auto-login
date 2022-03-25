@@ -4,7 +4,7 @@ import requests
 
 from xyw_class import XYW
 
-net = XYW(r'D:\TASK\Program\Python\project\demo\src\xywlogin')
+net = XYW(r'D:\TASK\Program\Python\project\xywlogin\src')
 
 while True:
     try:

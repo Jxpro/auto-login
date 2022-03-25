@@ -34,7 +34,7 @@ token_url = 'https://xyw.hainanu.edu.cn/cgi-bin/get_challenge?'
 login_url = 'https://xyw.hainanu.edu.cn/cgi-bin/srun_portal?'
 
 # 指定工作目录，方便集成脚本到其他工具（如 utools）
-workspace = r'D:\TASK\Program\Python\project\demo\src\xywlogin'
+workspace = r'D:\TASK\Program\Python\project\xywlogin\src'
 os.chdir(workspace)
 with open('config.json') as config_file:
     config = json.load(config_file)
