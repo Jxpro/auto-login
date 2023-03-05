@@ -1,10 +1,13 @@
+import os
 import time
 
 import requests
 
 from xyw_class import XYW
 
-net = XYW(r'D:\TASK\Program\Python\project\xywlogin\src')
+
+os.environ['NO_PROXY'] = 'xyw.hainanu.edu.cn'
+net = XYW(r'/Users/xin/Documents/Program/Python/auto-login/src')
 
 while True:
     try:
