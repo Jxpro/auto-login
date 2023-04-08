@@ -8,7 +8,7 @@ from xyw_class import XYW
 os.environ['NO_PROXY'] = 'xyw.hainanu.edu.cn'
 
 try:
-    requests.get('https://www.baidu.com')
+    requests.get('https://www.baidu.com', timeout=3)
     print('网络已连通')
 except requests.exceptions.RequestException:
     print('网络未认证')
